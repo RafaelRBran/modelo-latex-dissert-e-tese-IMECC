@@ -1,123 +1,130 @@
 % As configurações gerais são colocadas aqui, como novos comandos para o corpo do texto,
 % informações de bookmark para o PDF, tamanho de parágrafos, entre outros.
 
-% ----------------------------------------------------------
-% Configurações do pacote BACKREF
-% ----------------------------------------------------------
-% Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
-% Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
-% Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
-	\ifcase #1 %
-		Nenhuma citação no texto.%
-	\or
-		Citado na página #2.%
-	\else
-		Citado #1 vezes nas páginas #2.%
-	\fi}%
-% ---
+% Formatação em geral
+	% Formataçao da página
+	\setlength{\parindent}{2.0cm} % O tamanho do parágrafo
+	\setlength{\parskip}{0.2cm}  % tente também \onelineskip. Controle do espaçamento entre um parágrafo e outro
+	
+	% Formatação dos nomes nas seções
+	% \chapterstyle{default} % Para que apareça o nome 'Capítulo X' antes do título de cada capítulo
+	
+	% Formatação do modo matemático
+	\everymath{\displaystyle} % Com isso você não precisa se preocupar com a localização dos limitantes dos somatórios etc ($$\sum_{i = 1}^{n}$$)
+	
+	% cores
+	\definecolor{blue}{RGB}{41,5,195}
+	\definecolor{verde}{rgb}{0,0.5,0}
+	
+	% cores adicionais
+	% Na minha dissertação eu optei por usar essas duas paletas de cores em várias situações sinta-se livre para modificar ou usar.
+	% Pelo que me lembro, usei como base o site colorbrewer2.org
+	\definecolor{pal1.1}{HTML}{8DA0CB}
+	\definecolor{pal1.2}{HTML}{66C2A5}
+	\definecolor{pal1.3}{HTML}{FC8D62}
+	
+	\definecolor{pal2.1}{HTML}{e41a1c}
+	\definecolor{pal2.2}{HTML}{ff7f00}
+	\definecolor{pal2.3}{HTML}{984ea3}
+	\definecolor{pal2.4}{HTML}{377eb8}
+	\definecolor{pal2.5}{HTML}{4daf4a}
 
-% ----------------------------------------------------------
-% \theoremstyle{plain}
-\newtheorem{theorem}{Teorema}%[chapter]
-\newtheorem{lemma}{Lema}%[chapter]
-\providecommand*{\lemmaautorefname}{Lema}
-\newtheorem{proposition}{Proposição}%[chapter]
-\providecommand*{\propositionautorefname}{Proposição}
-\newtheorem{corollary}{Corolário}%[chapter]
-\providecommand*{\corollaryautorefname}{Corolário}
-\newtheorem{conjecture}{Conjectura}%[chapter]
-\providecommand*{\conjectureautorefname}{Conjectura}
-\newtheorem{definition}{Definição}%[chapter]
-\providecommand*{\definitionautorefname}{Definição}
-\newtheorem{notation}{Notação}%[chapter]
-\providecommand*{\notationautorefname}{Notação}
-\newtheorem{remark}{Observação}%[chapter]
-\providecommand*{\remarkautorefname}{Observação}
-\newtheorem{example}{Exemplo}%[chapter]
-\providecommand*{\exampleautorefname}{Exemplo}
-\newtheorem{note}{Nota}%[chapter]
-\providecommand*{\noteautorefname}{Nota}
-% ----------------------------------------------------------
+% Novos comandos e ambientes
+	% para facilitar com os pacotes
+	\newcommand{\citep}{\citeonline} % Na minha dissertação usei o padrção de referências Nome Do Fulano (1999). Com esse ajuste você pode usar só o \citep{apelido_do_artigo}
+	
+	% Tikz - Usei muito esse exemplo de boxplot aqui nas legendas. Você pode apagar, modificar, etc.
+	\newcommand{\boxplotLegenda}[1]{\tikz[scale=0.2, baseline = {(0ex, -0.5ex)}]{
+		\filldraw[#1, draw = black] (0, -.5) rectangle +(1, 1.3);
+		\draw[very thick] (0, -.1) -- +(1, 0);
+		\draw (.5,-.5) -- +(0, -.2);
+		\draw (.25,-.7) -- +(.5, 0);
+		\draw (.5,.8) -- +(0, .4);
+		\draw (.25,1.2) -- +(.5, 0);}}
+	
+	% Ambientes personalizados
+	% \theoremstyle{plain}
+	\newtheorem{theorem}{Teorema}%[chapter]
+	\newtheorem{corollary}{Corolário}%[chapter]
+	\providecommand*{\corollaryautorefname}{Corolário}
+	\newtheorem{conjecture}{Conjectura}%[chapter]
+	\providecommand*{\definitionautorefname}{Definição}
+	\newtheorem{example}{Exemplo}%[chapter]
+	\providecommand*{\exampleautorefname}{Exemplo}
+	
+	% Operadores abreviados
+	\DeclareMathOperator{\argmin}{\mathrm{arg}\min}
+	\DeclareMathOperator{\argmax}{\mathrm{arg}\max}
+	\DeclareMathOperator{\sgn}{\mathrm{sgn}}
+	\renewcommand{\sin}{\mathrm{sen}}
+	\renewcommand{\tan}{\mathrm{tg}}
+	\renewcommand{\csc}{\mathrm{cossec}}
+	\renewcommand{\cot}{\mathrm{cotg}}
 
-% ----------------------------------------------------------
-% Conjunto de configuracoes para o pacote 'listings'
-% ----------------------------------------------------------
-\lstset{
-  language=C++,
-  basicstyle=\ttfamily, 
-  keywordstyle=\color{blue}, 
-  stringstyle=\color{verde}, 
-  commentstyle=\color{red}, 
-  extendedchars=true, 
-  showspaces=false, 
-  showstringspaces=false,
-  numbers=left,
-  numberstyle=\tiny,
-  breaklines=true, 
-  backgroundcolor=\color{green!10},
-  breakautoindent=true,
-  fontadjust=false
-}
-% ----------------------------------------------------------
+% Configurações de pacores
+	% backref (recomendo não mexer)
+		% Usado sem a opção hyperpageref de backref
+		\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+		% Texto padrão antes do número das páginas
+		\renewcommand{\backref}{}
+		% Define os textos da citação
+		\renewcommand*{\backrefalt}[4]{
+			\ifcase #1 %
+				Nenhuma citação no texto.%
+			\or
+				Citado na página #2.%
+			\else
+				Citado #1 vezes nas páginas #2.%
+			\fi}
 
-% ----------------------------------------------------------
-% Informações do PDF
-% ----------------------------------------------------------
-% Configurações de aparência do PDF final
-% ---
-% alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{41,5,195}
-\definecolor{verde}{rgb}{0,0.5,0}
-% ---
-\makeatletter
-\hypersetup{
-  %pagebackref=true,
-  pdftitle={\@title},
-  pdfauthor={\@author},
-  pdfsubject={%
-    \imprimirtipotrabalho\ apresentada ao Instituto de Matemática, Estatística %
-    e Computação Científica da Universidade Estadual de Campinas como parte dos %
-    requisitos exigidos para a obtenção do título de \imprimirtitulacao\ em %
-    \imprimircurso.
-  },
-  pdfcreator={LaTeX with unicamp-abnTeX2},
-  pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
-  colorlinks=true,		% false: boxed links; true: colored links
-  linkcolor=blue,		% color of internal links
-  citecolor=blue,		% color of links to bibliography
-  filecolor=magenta,		% color of file links
-  urlcolor=blue,		% color of internet links
-  bookmarksdepth=4
-}
-\makeatother
-% ----------------------------------------------------------
+	% chngcntr
+		\counterwithin{figure}{chapter} % Figuras enumeradas segundo o capítulo
+		\counterwithin{table}{chapter} % Tabelas enumeradas segundo o capítulo
 
-% ----------------------------------------------------------
-% COMANDOS GLOBAIS
-% ----------------------------------------------------------
-\everymath{\displaystyle}
-% ---
-\renewcommand{\sin}{\mathrm{sen}}
-\renewcommand{\tan}{\mathrm{tg}}
-\renewcommand{\csc}{\mathrm{cossec}}
-\renewcommand{\cot}{\mathrm{cotg}}
-% ---
-% \DeclareMathOperator{\posto}{\mathrm{posto}}
-% \DeclareMathOperator{\conv}{\mathrm{conv}}
-% \DeclareMathOperator{\diag}{\mathrm{diag}}
-% \DeclareMathOperator{\argmin}{\mathrm{arg}\min}
-% \DeclareMathOperator{\argmax}{\mathrm{arg}\max}
-% ---
-% O tamanho do parágrafo é dado por:
-\setlength{\parindent}{2.0cm}
-% Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
-% ---
-% Para que apareça o nome 'Capítulo X' antes do título de cada capítulo
-% \chapterstyle{default}
-% ----------------------------------------------------------
-\newsubfloat{figure}% Allow subfloats in figure environment
-\providecommand*{\subfigureautorefname}{Subfigura}
+	% listings
+		%\lstset{
+		%	language=C++,
+		%	basicstyle=\ttfamily, 
+		%	keywordstyle=\color{blue}, 
+		%	stringstyle=\color{verde}, 
+		%	commentstyle=\color{red}, 
+		%	extendedchars=true, 
+		%	showspaces=false, 
+		%	showstringspaces=false,
+		%	numbers=left,
+		%	numberstyle=\tiny,
+		%	breaklines=true, 
+		%	backgroundcolor=\color{green!10},
+		%	breakautoindent=true,
+		%	fontadjust=false
+		%}
+		
+	% hyperref (recomendo não mexer)
+		\makeatletter
+		\hypersetup{
+			%pagebackref=true,
+			pdftitle={\@title},
+			pdfauthor={\@author},
+			pdfsubject={%
+				\imprimirtipotrabalho\ apresentada ao Instituto de Matemática, Estatística %
+				e Computação Científica da Universidade Estadual de Campinas como parte dos %
+				requisitos exigidos para a obtenção do título de \imprimirtitulacao\ em %
+				\imprimircurso.
+			},
+			pdfcreator={LaTeX with unicamp-abnTeX2},
+			pdfkeywords={abnt}{latex}{abntex}{abntex2}{trabalho acadêmico},
+			colorlinks=true,   % false: boxed links; true: colored links
+			linkcolor=blue,    % color of internal links
+			citecolor=blue,    % color of links to bibliography
+			filecolor=magenta, % color of file links
+			urlcolor=blue,     % color of internet links
+			bookmarksdepth=4
+		}
+		\makeatother
+% Gerenciamento de arquivos
+	% Gerenciamento de pastas
+	\graphicspath{{figuras/}} % Faz com que você não precise se referir à pasta figuras quando chamar no \includegraphics.
+
+% ?
+	\newsubfloat{figure} % Allow subfloats in figure environment
+	\providecommand*{\subfigureautorefname}{Subfigura}
