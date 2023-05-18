@@ -126,46 +126,29 @@
 			\tableofcontents*
 			\cleardoublepage
 		
-% %%%%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------------------------------------
-\textual
-% ----------------------------------------------------------
-% INTRODUÇÃO
-\include{introducao}
-% ----------------------------------------------------------
-% DESENVOLVIMENTO
-% \part{Preparação da pesquisa}
-% \include{capitulo1}
-% \include{capitulo2}
-% \part{Referenciais teóricos}
-% \include{capitulo3}
-% \include{capitulo4}
-% \include{capitulo5}
-% \part{Resultados}
-% \include{capitulo6}
-% \include{capitulo7}
-% --------------------
-% INÍCIO DOS EXEMPLOS
-% --------------------
-% No âmbito do Modelo Canônico, os comandos a seguir apresentam um sucinto resumo de como
-% esta classe pode ser usada. Oriente a construção do seu trabalho com base nestes comandos.
-% ---
-\include{abntex2-modelo-exemplos}
-% ---
-% --------------------
-% FIM DOS EXEMPLOS
-% --------------------
-% ----------------------------------------------------------
-% CONSIDERAÇÕES FINAIS
-% Finaliza a parte no bookmark do PDF para que se inicie o
-% bookmark na raiz e adiciona espaço de parte no Sumário
-% \phantompart
-\include{considfinais}
-% ----------------------------------------------------------
-% ---------------------------------------------------------------------------------
-% %%%%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------------------------------------
-% ---------------------------------------------------------------------------------
+	% Textuais
+		\textual
+		
+		% introdução
+		\chapter{Introdução} \label{cap_intro}
+		\input{02-textuais/1-introducao.tex}
+		
+		% desenvolvimento
+		\chapter{Nome_do_cap_1} \label{cap_ideia_do_nome}
+		\input{02-textuais/2-cap_1.tex} % Você precisa criar o arquivo e editar essa linha
+		
+		% \chapter{Nome_do_cap_2}
+		% \input{02-textuais/3-cap_2.tex} % Você precisa criar o arquivo e editar essa linha
+		
+		% \chapter{Nome_do_cap_3}
+		% \input{02-textuais/4-cap_3.tex} % Você precisa criar o arquivo e editar essa linha
+		
+		% considerações finais
+		% Finaliza a parte no bookmark do PDF para que se inicie o
+		% bookmark na raiz e adiciona espaço de parte no Sumário
+		% \phantompart
+		% \input{02-textuais/ZZ-considfinais.tex}
+
 % %%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS PÓS-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%
 % ---------------------------------------------------------------------------------
 % ----------------------------------------------------------
