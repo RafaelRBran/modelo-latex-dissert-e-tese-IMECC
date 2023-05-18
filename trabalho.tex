@@ -149,37 +149,30 @@
 		% \phantompart
 		% \input{02-textuais/ZZ-considfinais.tex}
 
-% %%%%%%%%%%%%%%%%%%%%%%% INÍCIO DOS ELEMENTOS PÓS-TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%
-% ---------------------------------------------------------------------------------
-% ----------------------------------------------------------
-\postextual
-% ----------------------------------------------------------
-% ----------------------------------------------------------
-% REFERÊNCIAS
-\nocite{masolo2010}
-\bibliography{abntex2-modelo-references}
-% ----------------------------------------------------------
-% ----------------------------------------------------------
-% APÊNDICES
-\begin{apendicesenv}
-% Imprime uma página indicando o início dos apêndices
-\partapendices
-\include{apendices}
-\end{apendicesenv}
-% ----------------------------------------------------------
-% ----------------------------------------------------------
-% ANEXOS
-\begin{anexosenv}
-% Imprime uma página indicando o início dos anexos
-\partanexos
-\include{anexos}
-\end{anexosenv}
-% ----------------------------------------------------------
-% ----------------------------------------------------------
-% ---------------------------------------------------------------------------------
-% %%%%%%%%%%%%%%%%%%%%%%%%%% FIM DOS ELEMENTOS TEXTUAIS %%%%%%%%%%%%%%%%%%%%%%%%%%
-% ----------------------------------------------------------------------------------
-% -----------------------------------------------------------------------------------------------
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIM DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% -----------------------------------------------------------------------------------------------
+	% pós-textuais
+		\postextual
+
+	% referências
+		%\nocite{masolo2010}
+		%\bibliography{$BIBLI}
+		% VOCÊ TEM QUE ADICIONAR UM ARQUIVO AQUI. Se trabalha em localmente linux, recomendo criar um arquivo .bib único para o seu sistema e setar a variável global BIBLI para esse arquivo.
+
+	% apêndices
+	%\begin{apendicesenv} % Imprime uma página indicando o início dos apêndices
+	%	\partapendices
+	%	\include{apendices}
+	%\end{apendicesenv}
+	
+	% anexos
+	\begin{anexosenv} % Imprime uma página indicando o início dos anexos
+		\partanexos
+		
+		\chapter{Nome do Anexo I} \label{A_ideia_do_nome_do_anexoI}
+		\input{03-pós_textuais/01-anexo1.tex}
+		
+		%\chapter{Nome do Anexo II} \label{A_ideia_do_nome_do_anexoII}
+		%\input{03-pós_textuais/02-anexo2.tex}
+			
+	\end{anexosenv}
+
 \end{document}
