@@ -11,7 +11,7 @@
 	% -- opções do pacote babel --
 	english, % idioma adicional para hifenização
 	brazil   % o último idioma é o principal do documento
-	]{imecc-unicamp}
+	]{00-configs/imecc-unicamp}
 
 % configs
 	% pacotes
@@ -130,11 +130,12 @@
 		\textual
 		
 		% introdução
-		\chapter{Introdução} \label{cap_intro}
+		\chapter{Introdução} \label{cap_intro} % para não enumerar a introdução, troque \chapter por \chapter* e descomente a próxima linha
+		% \addcontentsline{toc}{chapter}{Introdução}
 		\input{02-textuais/1-introducao.tex}
 		
 		% desenvolvimento
-		\chapter{Nome_do_cap_1} \label{cap_ideia_do_nome}
+		\chapter{Nome do cap 1} \label{cap_ideia_do_nome}
 		\input{02-textuais/2-cap_1.tex} % Você precisa criar o arquivo e editar essa linha
 		
 		% \chapter{Nome_do_cap_2}
