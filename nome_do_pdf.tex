@@ -129,8 +129,13 @@
 	% Textuais
 		\textual
 		
+		% NOTA:
+		% No template do IMECC, a introdução não é enumerada e a divisão é feita em parts, chapters, sections, subsections e subsubsections.
+		% Neste template a introdução é o ``capítulo 1'' e eu usei chapters ao invés de parts. Isso deixa o documento um pouco mais simples e o índice fica mais fácil de ler.
+		% Discuta com o seu orientador qual caminho seguir!
+		
 		% introdução
-		\chapter{Introdução} \label{cap_intro} % para não enumerar a introdução, troque \chapter por \chapter* e descomente a próxima linha
+		\chapter{Introdução} \label{cap_intro} % para não enumerar a introdução, troque \chapter por \chapter* e descomente a próxima linha.
 		% \addcontentsline{toc}{chapter}{Introdução}
 		\input{02-textuais/1-introducao.tex}
 		
@@ -149,31 +154,30 @@
 		% bookmark na raiz e adiciona espaço de parte no Sumário
 		% \phantompart
 		% \input{02-textuais/ZZ-considfinais.tex}
-
+		
 	% pós-textuais
 		\postextual
-
-	% referências
-		%\nocite{masolo2010}
-		%\bibliography{$BIBLI}
-		% VOCÊ TEM QUE ADICIONAR UM ARQUIVO AQUI. Se trabalha em localmente linux, recomendo criar um arquivo .bib único para o seu sistema e setar a variável global BIBLI para esse arquivo.
-
-	% apêndices
-	%\begin{apendicesenv} % Imprime uma página indicando o início dos apêndices
-	%	\partapendices
-	%	\include{apendices}
-	%\end{apendicesenv}
+		
+		% referências (obrigatório)
+			%\nocite{masolo2010}
+			%\bibliography{$BIBLI}
+			% VOCÊ TEM QUE ADICIONAR UM ARQUIVO AQUI. Se trabalha em localmente Linux, recomendo criar um arquivo .bib único para o seu sistema e setar a variável global BIBLI para esse arquivo.
+		
+		% apêndices
+			%\begin{apendicesenv} % Imprime uma página indicando o início dos apêndices
+			%	\partapendices
+			%	\include{apendices}
+			%\end{apendicesenv}
 	
-	% anexos
-	\begin{anexosenv} % Imprime uma página indicando o início dos anexos
-		\partanexos
-		
-		\chapter{Nome do Anexo I} \label{A_ideia_do_nome_do_anexoI}
-		\input{03-pós_textuais/01-anexo1.tex}
-		
-		%\chapter{Nome do Anexo II} \label{A_ideia_do_nome_do_anexoII}
-		%\input{03-pós_textuais/02-anexo2.tex}
-			
-	\end{anexosenv}
+		% anexos
+			\begin{anexosenv} % Imprime uma página indicando o início dos anexos
+				\partanexos
+				
+				\chapter{Nome do Anexo I} \label{A_ideia_do_nome_do_anexoI}
+				\input{03-pós_textuais/01-anexo1.tex}
+				
+				%\chapter{Nome do Anexo II} \label{A_ideia_do_nome_do_anexoII}
+				%\input{03-pós_textuais/02-anexo2.tex}
+			\end{anexosenv}
 
 \end{document}

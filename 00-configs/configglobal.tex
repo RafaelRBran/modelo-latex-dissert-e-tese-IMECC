@@ -2,7 +2,7 @@
 % informações de bookmark para o PDF, tamanho de parágrafos, entre outros.
 
 % Formatação em geral
-	% Formataçao da página
+	% Formatação da página
 	\setlength{\parindent}{2.0cm} % O tamanho do parágrafo
 	\setlength{\parskip}{0.2cm}  % tente também \onelineskip. Controle do espaçamento entre um parágrafo e outro
 	
@@ -31,16 +31,16 @@
 
 % Novos comandos e ambientes
 	% para facilitar com os pacotes
-	\newcommand{\citep}{\citeonline} % Na minha dissertação usei o padrção de referências Nome Do Fulano (1999). Com esse ajuste você pode usar só o \citep{apelido_do_artigo}
+	\newcommand{\citep}{\citeonline} % Na minha dissertação usei o padrão de referências Nome Do Fulano (1999). Com esse ajuste você pode usar só o \citep{apelido_do_artigo}
 	
 	% Tikz - Usei muito esse exemplo de boxplot aqui nas legendas. Você pode apagar, modificar, etc.
-	\newcommand{\boxplotLegenda}[1]{\tikz[scale=0.2, baseline = {(0ex, -0.5ex)}]{
-		\filldraw[#1, draw = black] (0, -.5) rectangle +(1, 1.3);
-		\draw[very thick] (0, -.1) -- +(1, 0);
-		\draw (.5,-.5) -- +(0, -.2);
-		\draw (.25,-.7) -- +(.5, 0);
-		\draw (.5,.8) -- +(0, .4);
-		\draw (.25,1.2) -- +(.5, 0);}}
+		%\newcommand{\boxplotLegenda}[1]{\tikz[scale=0.2, baseline = {(0ex, -0.5ex)}]{
+			%\filldraw[#1, draw = black] (0, -.5) rectangle +(1, 1.3);
+			%\draw[very thick] (0, -.1) -- +(1, 0);
+			%\draw (.5,-.5) -- +(0, -.2);
+			%\draw (.25,-.7) -- +(.5, 0);
+			%\draw (.5,.8) -- +(0, .4);
+			%\draw (.25,1.2) -- +(.5, 0);}}
 	
 	% Ambientes personalizados
 	% \theoremstyle{plain}
